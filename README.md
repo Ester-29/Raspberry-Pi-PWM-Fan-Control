@@ -1,20 +1,16 @@
 # BÁO CÁO TIẾN ĐỘ & KIỂM THỬ TÍCH HỢP DRIVER ĐIỀU KHIỂN QUẠT PWM
 
 **Đồ án:** Linux Kernel Driver Điều Khiển Tốc Độ Quạt Tản Nhiệt Bằng PWM Tự Động Theo Nhiệt Độ CPU  
-**Giảng viên hướng dẫn:** Thầy Trương Ngọc Sơn  
+**Giảng viên hướng dẫn:** Thầy Huỳnh Hoàng Hà 
 **Học phần:** Hệ thống nhúng (Embedded Systems)  
 
 ---
 
 ## I. THÔNG TIN NHÓM & PHÂN CHIA CÔNG VIỆC
 
-Nhóm thực hiện gồm 03 thành viên với bảng phân công công việc chi tiết, khoa học, tập trung nhiệm vụ cốt lõi và phức tạp nhất cho Nhóm trưởng. 
-
-*(Bảng dưới đây đã được tối ưu hóa hiển thị trên GitHub bằng thẻ HTML để tránh vỡ khung và căn chỉnh thẳng hàng tuyệt đối)*
-
 | STT | Thành viên | MSSV | Vai trò | Công việc phân công chi tiết | Trọng số đóng góp |
 | :---: | :--- | :---: | :---: | :--- | :---: |
-| 1 | **Võ Trần Đăng Khoa** | **24119051** | **Nhóm trưởng** | <ul><li>Nghiên cứu cấu trúc Kernel Module, thiết kế Driver <code>pwm_fan_driver.c</code>.</li><li>Lập trình ánh xạ địa chỉ vật lý sang địa chỉ ảo (<code>ioremap</code>), cấu hình thanh ghi GPIO và PWM của chip Broadcom.</li><li>Nghiên cứu và sửa lỗi tương thích hàm <code>class_create</code> giữa Kernel mới (v7.0) và cũ.</li><li>Trực tiếp quản trị Git/GitHub, giải quyết các lỗi xung đột nghiêm trọng (<code>non-fast-forward</code>, <code>force push</code>).</li><li>Khắc phục sự cố bảo mật <b>GitHub Push Protection</b> (rò rỉ mã Token bí mật tại dòng 241 file code C).</li></ul> | **45%**<br>*(Nặng nhất)* |
+| 1 | **Võ Trần Đăng Khoa** | **24119051** | **Nhóm trưởng** | <ul><li>Nghiên cứu cấu trúc Kernel Module, thiết kế Driver <code>pwm_fan_driver.c</code>.</li><li>Lập trình ánh xạ địa chỉ vật lý sang địa chỉ ảo (<code>ioremap</code>), cấu hình thanh ghi GPIO và PWM của chip Broadcom.</li><li>Nghiên cứu và sửa lỗi tương thích hàm <code>class_create</code> giữa Kernel mới (v7.0) và cũ.</li><li>Trực tiếp quản trị Git/GitHub, giải quyết các lỗi xung đột nghiêm trọng (<code>non-fast-forward</code>, <code>force push</code>).</li><li>Khắc phục sự cố bảo mật <b>GitHub Push Protection</b> (rò rỉ mã Token bí mật tại dòng 241 file code C).</li></ul> | **45%**|
 | 2 | **Huỳnh Anh Tuấn** | **24119096** | **Thành viên** | <ul><li>Thiết lập môi trường máy ảo Oracle VM VirtualBox và Ubuntu OS Host.</li><li>Cài đặt bộ biên dịch chéo <code>arm-linux-gnueabihf-gcc</code> và các thư viện hỗ trợ xây dựng hệ thống (<code>build-essential</code>, <code>bc</code>, <code>bison</code>, <code>flex</code>).</li><li>Tải và thiết lập mã nguồn Kernel Raspberry Pi OS từ GitHub, thực hiện cấu hình phần cứng mặc định (<code>bcmrpi_defconfig</code>).</li><li>Hỗ trợ chạy thử nghiệm nạp driver cục bộ (<code>insmod</code>, <code>rmmod</code>) trên máy ảo Ubuntu.</li></ul> | **30%** |
 | 3 | **Phạm Trần Huy Hoàng** | **24119039** | **Thành viên** | <ul><li>Tổ chức cấu trúc thư mục đồ án chuẩn khoa học trên GitHub (<code>source_code/</code>, <code>Docs/</code>, <code>weekly_reports/</code>).</li><li>Thiết lập kịch bản và ma trận kiểm thử (Test Matrix) phục vụ việc chạy thực nghiệm.</li><li>Thử nghiệm phân quyền thiết bị ảo dưới <code>/dev/pwm_fan</code>, gửi tín hiệu mô phỏng tốc độ quạt (<code>echo "75" > /dev/pwm_fan</code>) và theo dõi log hệ thống (<code>dmesg</code>).</li><li>Tổng hợp dữ liệu, viết báo cáo tuần và hoàn thiện tài liệu hướng dẫn Markdown (<code>README.md</code>).</li></ul> | **25%** |
 
